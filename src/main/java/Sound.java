@@ -21,8 +21,8 @@ public class Sound
       if (samples[i]>limit){
         samples[i]=limit;
         count++;}
-      else if (samples[i]< (-1)*limit){
-        samples[i]=(-1)*limit;
+      else if (samples[i]< -limit){
+        samples[i]=-limit;
         count++;}
     }
     return count;
@@ -41,7 +41,7 @@ public class Sound
     while (samples[n]==0)
       n++;
     int [] w= new int[samples.length-n];
-    for (int i=n;i<w.length; i++){
+    for (int i=0;i<w.length; i++){
       w[i]=samples[i+n];
     }
     samples =w;
